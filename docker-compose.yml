@@ -1,0 +1,317 @@
+# Jellyfin Media Stack – Vorlage
+# Alle Pfade kommen aus der .env (siehe .env.example). Configs liegen unter ./config/<dienst>.
+# Dienste, die du nicht brauchst, einfach löschen oder auskommentieren.
+
+x-common: &common
+  restart: unless-stopped
+
+x-env: &env
+  PUID: ${PUID:-1000}
+  PGID: ${PGID:-1000}
+  TZ: ${TZ:-Europe/Berlin}
+
+services:
+  # ───────────── Jellyfin ─────────────
+  jellyfin:
+    <<: *common
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      <<: *env
+    # Hardware-Transcoding (Intel/AMD, VAAPI/QSV). Ohne GPU: devices + group_add entfernen.
+    devices:
+      - /dev/dri:/dev/dri
+    group_add:
+      - "${RENDER_GID:-44}"
+    volumes:
+      - ./config/jellyfin:/config
+      - ./config/jellyfin/custom-cont-init.d:/custom-cont-init.d:ro
+      - ${MEDIA_DIR}:/data/media
+      - ${ANIME_DIR}:/anime
+      - ${ANIME_TRAILER_DIR}:/anime-trailer:ro
+      # EPG-Datei direkt für das Plugin LocalRecs (Darsteller im Live-TV), siehe docs/05-live-tv.md
+      - ./config/m3u-editor/storage/epg:/epg-source:ro
+    ports:
+      - 8096:8096
+
+  jellyseerr:
+    <<: *common
+    image: ghcr.io/seerr-team/seerr:latest
+    container_name: jellyseerr
+    environment:
+      TZ: ${TZ:-Europe/Berlin}
+    volumes:
+      - ./config/jellyseerr:/app/config
+    ports:
+      - 5055:5055
+
+  # ───────────── Download & *arr ─────────────
+  sabnzbd:
+    <<: *common
+    image: lscr.io/linuxserver/sabnzbd:latest
+    container_name: sabnzbd
+    environment:
+      <<: *env
+    volumes:
+      - ./config/sabnzbd:/config
+      - ${DATA_DIR}:/data
+    ports:
+      - 8080:8080
+
+  prowlarr:
+    <<: *common
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      <<: *env
+    volumes:
+      - ./config/prowlarr:/config
+    ports:
+      - 9696:9696
+
+  sonarr:
+    <<: *common
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      <<: *env
+    volumes:
+      - ./config/sonarr:/config
+      - ${DATA_DIR}:/data          # Downloads + Medien in EINEM Mount → Hardlinks statt Kopien
+      - ${ANIME_DIR}:/anime
+    ports:
+      - 8989:8989
+
+  radarr:
+    <<: *common
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      <<: *env
+    volumes:
+      - ./config/radarr:/config
+      - ${DATA_DIR}:/data
+    ports:
+      - 7878:7878
+
+  lidarr:
+    <<: *common
+    image: lscr.io/linuxserver/lidarr:latest
+    container_name: lidarr
+    environment:
+      <<: *env
+    volumes:
+      - ./config/lidarr:/config
+      - ${DATA_DIR}:/data
+      - ${MUSIC_DIR}:/music
+    ports:
+      - 8686:8686
+
+  # Deutsche Titel/Umlaute für Sonarr/Radarr-Suchen (als Proxy vor Prowlarr)
+  umlautadaptarrex:
+    <<: *common
+    image: lexfi/umlautadaptarrex:latest
+    container_name: umlautadaptarrex
+    environment:
+      TZ: ${TZ:-Europe/Berlin}
+      UMLAUTADAPTARREX_LEGACYAPI_PORT: 5005
+      UMLAUTADAPTARREX_PROXY_PORT: 5006
+      UMLAUTADAPTARREX_WEBUI_PORT: 5007
+    volumes:
+      - ./config/umlautadaptarrex:/data
+    ports:
+      - 5005:5005
+      - 5006:5006
+      - 5007:5007
+
+  # Lokale Trailer (statt YouTube-Streams) für Filme/Serien/Anime
+  trailarr:
+    <<: *common
+    image: nandyalu/trailarr:latest
+    container_name: trailarr
+    environment:
+      <<: *env
+    volumes:
+      - ./config/trailarr:/config
+      # gleiche Pfade wie in Radarr/Sonarr → keine Pfad-Zuordnungen nötig
+      - ${DATA_DIR}:/data
+      - ${ANIME_DIR}:/anime
+      - ${ANIME_TRAILER_DIR}:/anime-trailer
+    ports:
+      - 7889:7889
+    mem_limit: 1g
+
+  # ───────────── Anime ─────────────
+  shoko:
+    <<: *common
+    image: shokoanime/server:latest
+    container_name: shoko
+    environment:
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+    volumes:
+      - ./config/shoko:/home/shoko/.shoko
+      - ${ANIME_DIR}:/anime
+    ports:
+      - 8111:8111
+
+  # ───────────── Live-TV ─────────────
+  m3u-editor:
+    <<: *common
+    image: sparkison/m3u-editor:latest
+    container_name: m3u-editor
+    environment:
+      TZ: ${TZ:-Europe/Berlin}
+      APP_URL: ${M3U_APP_URL:-http://localhost}
+      APP_PORT: 36400
+      DEFAULT_EPG_DAYS: 14          # Standard 7 – sonst schneidet m3u-editor längeres EPG ab
+      ENABLE_POSTGRES: "true"
+      PG_DATABASE: m3ue
+      PG_USER: m3ue
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_PORT: 5432
+      DB_CONNECTION: pgsql
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_DATABASE: m3ue
+      DB_USERNAME: m3ue
+      DB_PASSWORD: ${PG_PASSWORD}
+      REDIS_ENABLED: "false"
+      REDIS_HOST: m3u-redis
+      REDIS_SERVER_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      M3U_PROXY_ENABLED: "false"
+      M3U_PROXY_HOST: m3u-proxy
+      M3U_PROXY_PORT: 38085
+      M3U_PROXY_TOKEN: ${M3U_PROXY_TOKEN}
+    volumes:
+      - ./config/m3u-editor/data:/var/www/config
+      - ./config/m3u-editor/pgdata:/var/lib/postgresql/data
+      - ./config/m3u-editor/storage:/var/www/html/storage/app/public
+    ports:
+      - 36400:36400
+    depends_on:
+      m3u-proxy:
+        condition: service_healthy
+      m3u-redis:
+        condition: service_healthy
+
+  m3u-proxy:
+    <<: *common
+    image: sparkison/m3u-proxy:latest
+    container_name: m3u-proxy
+    environment:
+      API_TOKEN: ${M3U_PROXY_TOKEN}
+      PORT: 38085
+      REDIS_ENABLED: "true"
+      REDIS_HOST: m3u-redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      REDIS_DB: 6
+      ENABLE_REDIS_POOLING: "true"
+      LOG_LEVEL: INFO
+    depends_on:
+      m3u-redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:38085/health?api_token=${M3U_PROXY_TOKEN}"]
+      interval: 30s
+      timeout: 2s
+      retries: 12
+      start_period: 10s
+
+  m3u-redis:
+    <<: *common
+    image: redis:alpine
+    container_name: m3u-redis
+    volumes:
+      - ./config/m3u-editor/redis-data:/data
+    command: redis-server --port 6379 --requirepass ${REDIS_PASSWORD} --appendonly no --save "" --maxmemory 256mb --maxmemory-policy allkeys-lru --loglevel warning
+    healthcheck:
+      test: ["CMD", "redis-cli", "-p", "6379", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # 14 Tage EPG von MagentaTV über iptv-org/epg, siehe docs/05-live-tv.md
+  epg-grabber:
+    <<: *common
+    image: node:22-alpine
+    container_name: epg-grabber
+    working_dir: /work/epg
+    command: sh /work/run.sh
+    volumes:
+      - ./epg-grabber:/work
+
+  # ───────────── Musik, Hörbücher, Bücher, YouTube ─────────────
+  navidrome:
+    <<: *common
+    image: deluan/navidrome:latest
+    container_name: navidrome
+    environment:
+      PUID: ${PUID:-1000}
+      PGID: ${PGID:-1000}
+      ND_DEFAULTLANGUAGE: de
+      ND_LASTFM_LANGUAGE: de
+      ND_LASTFM_APIKEY: ${LASTFM_APIKEY:-}
+      ND_LASTFM_SECRET: ${LASTFM_SECRET:-}
+    volumes:
+      - ./config/navidrome:/data
+      - ${MUSIC_DIR}:/music:ro
+    ports:
+      - 4533:4533
+
+  audiobookshelf:
+    <<: *common
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    environment:
+      <<: *env
+    volumes:
+      - ./config/audiobookshelf:/config
+      - ./config/audiobookshelf/metadata:/metadata
+      - ${AUDIOBOOKS_DIR}:/audiobooks
+    ports:
+      - 8000:80
+
+  kavita:
+    <<: *common
+    image: ghcr.io/kareadita/kavita:latest
+    container_name: kavita
+    user: "${PUID:-1000}:${PGID:-1000}"
+    environment:
+      TZ: ${TZ:-Europe/Berlin}
+    volumes:
+      - ./config/kavita:/kavita/config
+      - ${BOOKS_DIR}:/data/ebooks
+      - ${MANGA_DIR}:/data/manga
+    ports:
+      - 5000:5000
+
+  # Manga-Downloader (Quellen-Erweiterungen wie Tachiyomi), lädt nach MANGA_DIR für Kavita
+  suwayomi:
+    <<: *common
+    image: ghcr.io/suwayomi/tachidesk:preview
+    container_name: suwayomi
+    user: "${PUID:-1000}:${PGID:-1000}"
+    environment:
+      TZ: ${TZ:-Europe/Berlin}
+    volumes:
+      - ./config/suwayomi:/home/suwayomi/.local/share/Tachidesk
+      - ${MANGA_DIR}:/home/suwayomi/Downloads
+    ports:
+      - 8081:8080
+
+  # YouTube-Kanäle abonnieren und herunterladen
+  pinchflat:
+    <<: *common
+    image: ghcr.io/kieraneglin/pinchflat:latest
+    container_name: pinchflat
+    environment:
+      <<: *env
+    volumes:
+      - ./config/pinchflat:/config
+      - ${YOUTUBE_DIR}:/downloads
+    ports:
+      - 8945:8945

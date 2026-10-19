@@ -1,0 +1,8 @@
+.env
+config/
+epg-grabber/epg/
+epg-grabber/*.xml
+!epg-grabber/magenta.channels.xml
+epg-grabber/*.log
+*.bak*
+__pycache__/

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channels>
+  <channel site="web.magentatv.de" site_id="400" lang="de" xmltv_id="tagesschau24.de">tagesschau24</channel>
+  <channel site="web.magentatv.de" site_id="40" lang="de" xmltv_id="Sky.Cinema.Action.HD.de">Sky Cinema Action</channel>
+  <channel site="web.magentatv.de" site_id="195" lang="de" xmltv_id="Sky.Cinema.Premiere.HD.de">Sky Cinema Premiere</channel>
+  <channel site="web.magentatv.de" site_id="373" lang="de" xmltv_id="Das.Erste.de">Das Erste</channel>
+  <channel site="web.magentatv.de" site_id="395" lang="de" xmltv_id="NITRO.de">NITRO</channel>
+  <channel site="web.magentatv.de" site_id="5142" lang="de" xmltv_id="Sky.Nature.de">Sky Nature</channel>
+  <channel site="web.magentatv.de" site_id="39" lang="de" xmltv_id="DF1.de">DF1</channel>
+  <channel site="web.magentatv.de" site_id="392" lang="de" xmltv_id="3sat.de">3sat</channel>
+  <channel site="web.magentatv.de" site_id="394" lang="de" xmltv_id="ARTE.de">ARTE</channel>
+  <channel site="web.magentatv.de" site_id="5143" lang="de" xmltv_id="Sky.Documentaries.de">Sky Documentaries</channel>
+  <channel site="web.magentatv.de" site_id="3756" lang="de" xmltv_id="Sky.Replay.HD.de">Sky Replay</channel>
+  <channel site="web.magentatv.de" site_id="381" lang="de" xmltv_id="SAT.1.de">SAT.1</channel>
+  <channel site="web.magentatv.de" site_id="375" lang="de" xmltv_id="WELT.de">WELT</channel>
+  <channel site="web.magentatv.de" site_id="27" lang="de" xmltv_id="Disney.Channel.de">Disney Channel</channel>
+  <channel site="web.magentatv.de" site_id="471" lang="de" xmltv_id="13th.Street.Universal.de">13TH STREET (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="4924" lang="de" xmltv_id="Sky.Crime.de">Sky Crime</channel>
+  <channel site="web.magentatv.de" site_id="216" lang="de" xmltv_id="RTL.Crime.de">RTL Crime</channel>
+  <channel site="web.magentatv.de" site_id="3930" lang="de" xmltv_id="VOXup.de">VOXup</channel>
+  <channel site="web.magentatv.de" site_id="479" lang="de" xmltv_id="ARD.alpha.de">ARD-alpha</channel>
+  <channel site="web.magentatv.de" site_id="378" lang="de" xmltv_id="ZDFinfo.de">ZDFinfo</channel>
+  <channel site="web.magentatv.de" site_id="461" lang="de" xmltv_id="Warner.TV.Comedy.de">Warner TV Comedy (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="404" lang="de" xmltv_id="RTL.de">RTL</channel>
+  <channel site="web.magentatv.de" site_id="391" lang="de" xmltv_id="ZDFneo.de">ZDFneo</channel>
+  <channel site="web.magentatv.de" site_id="407" lang="de" xmltv_id="BR.de">BR Fernsehen Süd</channel>
+  <channel site="web.magentatv.de" site_id="386" lang="de" xmltv_id="HR.de">hr-fernsehen</channel>
+  <channel site="web.magentatv.de" site_id="377" lang="de" xmltv_id="NDR.de">NDR Fernsehen Niedersachsen</channel>
+  <channel site="web.magentatv.de" site_id="396" lang="de" xmltv_id="ProSieben.MAXX.de">ProSieben MAXX</channel>
+  <channel site="web.magentatv.de" site_id="25" lang="de" xmltv_id="DELUXE.MUSIC.de">DELUXE MUSIC</channel>
+  <channel site="web.magentatv.de" site_id="198" lang="de" xmltv_id="Sky.Sport.Tennis.de">Sky Sport Tennis</channel>
+  <channel site="web.magentatv.de" site_id="5558" lang="de" xmltv_id="Sky.Sport.Golf.de">Sky Sport Golf</channel>
+  <channel site="web.magentatv.de" site_id="384" lang="de" xmltv_id="RBB.de">rbb fernsehen Berlin</channel>
+  <channel site="web.magentatv.de" site_id="194" lang="de" xmltv_id="sportdigital.Fussball.de">SPORTDIGITAL FUSSBALL</channel>
+  <channel site="web.magentatv.de" site_id="60" lang="de" xmltv_id="Welt.der.Wunder.TV.de">Welt der Wunder</channel>
+  <channel site="web.magentatv.de" site_id="376" lang="de" xmltv_id="ntv.de">ntv</channel>
+  <channel site="web.magentatv.de" site_id="397" lang="de" xmltv_id="WDR.de">WDR Fernsehen Köln</channel>
+  <channel site="web.magentatv.de" site_id="209" lang="de" xmltv_id="RTL.Passion.de">RTL Passion</channel>
+  <channel site="web.magentatv.de" site_id="134" lang="de" xmltv_id="Heimatkanal.de">Heimatkanal (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="157" lang="de" xmltv_id="kabel.eins.classics.de">Kabel Eins CLASSICS</channel>
+  <channel site="web.magentatv.de" site_id="540" lang="de" xmltv_id="Warner.TV.Film.de">Warner TV Film (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="231" lang="de" xmltv_id="Sky.Sport.Bundesliga.6.de">Sky Sport Bundesliga 6</channel>
+  <channel site="web.magentatv.de" site_id="258" lang="de" xmltv_id="Sky.Sport.Bundesliga.7.de">Sky Sport Bundesliga 7</channel>
+  <channel site="web.magentatv.de" site_id="259" lang="de" xmltv_id="ProSieben.Fun.de">ProSieben FUN</channel>
+  <channel site="web.magentatv.de" site_id="252" lang="de" xmltv_id="MDR.de">MDR-Fernsehen Thüringen</channel>
+  <channel site="web.magentatv.de" site_id="379" lang="de" xmltv_id="SWR/SR.de">SR Fernsehen</channel>
+  <channel site="web.magentatv.de" site_id="28" lang="de" xmltv_id="MTV.de">MTV</channel>
+  <channel site="web.magentatv.de" site_id="405" lang="de" xmltv_id="kabel.eins.de">Kabel Eins</channel>
+  <channel site="web.magentatv.de" site_id="402" lang="de" xmltv_id="ONE.de">ONE</channel>
+  <channel site="web.magentatv.de" site_id="6210" lang="de" xmltv_id="Sky.Cinema.Highlights.HD.de">Sky Cinema Highlights</channel>
+  <channel site="web.magentatv.de" site_id="192" lang="de" xmltv_id="Sky.Sport.1.de">Sky Sport 1</channel>
+  <channel site="web.magentatv.de" site_id="111" lang="de" xmltv_id="Sky.Sport.4.de">Sky Sport 4</channel>
+  <channel site="web.magentatv.de" site_id="31" lang="de" xmltv_id="Sky.Sport.Top.Event.de">Sky Sport Top Event</channel>
+  <channel site="web.magentatv.de" site_id="403" lang="de" xmltv_id="SUPER.RTL.de">Super RTL</channel>
+  <channel site="web.magentatv.de" site_id="114" lang="de" xmltv_id="Sky.Sport.5.de">Sky Sport 5</channel>
+  <channel site="web.magentatv.de" site_id="113" lang="de" xmltv_id="Sky.Sport.6.de">Sky Sport 6</channel>
+  <channel site="web.magentatv.de" site_id="190" lang="de" xmltv_id="Sky.Sport.News.de">Sky Sport News</channel>
+  <channel site="web.magentatv.de" site_id="4889" lang="de" xmltv_id="Sky.Sport.F1.de">Sky Sport F1</channel>
+  <channel site="web.magentatv.de" site_id="5555" lang="de" xmltv_id="Sky.Sport.Premier.League.de">Sky Sport Premier League</channel>
+  <channel site="web.magentatv.de" site_id="389" lang="de" xmltv_id="Eurosport.1.de">Eurosport 1</channel>
+  <channel site="web.magentatv.de" site_id="42" lang="de" xmltv_id="Sky.Sport.Bundesliga.de">Sky Sport Bundesliga</channel>
+  <channel site="web.magentatv.de" site_id="338" lang="de" xmltv_id="SAT.1.Gold.de">SAT.1 GOLD</channel>
+  <channel site="web.magentatv.de" site_id="385" lang="de" xmltv_id="VOX.de">VOX</channel>
+  <channel site="web.magentatv.de" site_id="200" lang="de" xmltv_id="Sky.Cinema.Classics.HD.de">Sky Cinema Classics</channel>
+  <channel site="web.magentatv.de" site_id="206" lang="de" xmltv_id="Sky.Sport.Bundesliga.1.de">Sky Sport Bundesliga 1</channel>
+  <channel site="web.magentatv.de" site_id="211" lang="de" xmltv_id="Sky.Sport.Bundesliga.2.de">Sky Sport Bundesliga 2</channel>
+  <channel site="web.magentatv.de" site_id="4512" lang="de" xmltv_id="Cartoon.Network.de">Cartoon Network (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="387" lang="de" xmltv_id="KIKA.de">KiKA</channel>
+  <channel site="web.magentatv.de" site_id="201" lang="de" xmltv_id="Sky.Krimi.de">Sky Krimi</channel>
+  <channel site="web.magentatv.de" site_id="601" lang="de" xmltv_id="TOGGO.plus.de">TOGGO plus</channel>
+  <channel site="web.magentatv.de" site_id="4379" lang="de" xmltv_id="Nick.Jr..de">Nick Jr. (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="137" lang="de" xmltv_id="KinoweltTV.de">KinoweltTV</channel>
+  <channel site="web.magentatv.de" site_id="383" lang="de" xmltv_id="TLC.de">TLC</channel>
+  <channel site="web.magentatv.de" site_id="224" lang="de" xmltv_id="SAT.1.emotions.de">SAT.1 emotions</channel>
+  <channel site="web.magentatv.de" site_id="132" lang="de" xmltv_id="Jukebox.de">Jukebox (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="4406" lang="de" xmltv_id="Spiegel.Geschichte.de">Spiegel Geschichte</channel>
+  <channel site="web.magentatv.de" site_id="573" lang="de" xmltv_id="kabel.eins.Doku.de">Kabel Eins Doku</channel>
+  <channel site="web.magentatv.de" site_id="371" lang="de" xmltv_id="PHOENIX.de">phoenix</channel>
+  <channel site="web.magentatv.de" site_id="5556" lang="de" xmltv_id="Sky.Sport.Mix.de">Sky Sport Mix</channel>
+  <channel site="web.magentatv.de" site_id="127" lang="de" xmltv_id="Sky.Sport.7.de">Sky Sport 7</channel>
+  <channel site="web.magentatv.de" site_id="261" lang="de" xmltv_id="Sky.Sport.8.de">Sky Sport 8</channel>
+  <channel site="web.magentatv.de" site_id="187" lang="de" xmltv_id="Sky.Sport.9.de">Sky Sport 9</channel>
+  <channel site="web.magentatv.de" site_id="5554" lang="de" xmltv_id="Sky.Sport.10.de">Sky Sport 10</channel>
+  <channel site="web.magentatv.de" site_id="401" lang="de" xmltv_id="SPORT1.de">SPORT1</channel>
+  <channel site="web.magentatv.de" site_id="408" lang="de" xmltv_id="ZDF.de">ZDF</channel>
+  <channel site="web.magentatv.de" site_id="542" lang="de" xmltv_id="RTLup.de">RTLup</channel>
+  <channel site="web.magentatv.de" site_id="199" lang="de" xmltv_id="Sky.Sport.Bundesliga.3.de">Sky Sport Bundesliga 3</channel>
+  <channel site="web.magentatv.de" site_id="234" lang="de" xmltv_id="Sky.Sport.Bundesliga.5.de">Sky Sport Bundesliga 5</channel>
+  <channel site="web.magentatv.de" site_id="382" lang="de" xmltv_id="RTLZWEI.de">RTLZWEI</channel>
+  <channel site="web.magentatv.de" site_id="50" lang="de" xmltv_id="Comedy.Central.de">Comedy Central</channel>
+  <channel site="web.magentatv.de" site_id="576" lang="de" xmltv_id="Sky.One.de">Sky One</channel>
+  <channel site="web.magentatv.de" site_id="458" lang="de" xmltv_id="Warner.TV.Serie.de">Warner TV Serie (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="264" lang="de" xmltv_id="Sky.Atlantic.HD.de">Sky Atlantic</channel>
+  <channel site="web.magentatv.de" site_id="572" lang="de" xmltv_id="Sky.Cinema.Family.HD.de">Sky Cinema Family</channel>
+  <channel site="web.magentatv.de" site_id="553" lang="de" xmltv_id="N24.DOKU.de">N24 Doku</channel>
+  <channel site="web.magentatv.de" site_id="153" lang="de" xmltv_id="GEO.Television.de">GEO Television</channel>
+  <channel site="web.magentatv.de" site_id="105" lang="de" xmltv_id="Animal.Planet.de">Animal Planet</channel>
+  <channel site="web.magentatv.de" site_id="5141" lang="de" xmltv_id="CRIME.+.INVESTIGATION.de">Crime+Investigation (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="462" lang="de" xmltv_id="Universal.Channel.HD.de">Universal TV (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="110" lang="de" xmltv_id="AXN.Black.de">AXN Black</channel>
+  <channel site="web.magentatv.de" site_id="188" lang="de" xmltv_id="AXN.White.de">AXN White</channel>
+  <channel site="web.magentatv.de" site_id="429" lang="de" xmltv_id="DMAX.de">DMAX</channel>
+  <channel site="web.magentatv.de" site_id="23" lang="de" xmltv_id="Discovery.HD.de">Discovery Channel</channel>
+  <channel site="web.magentatv.de" site_id="6730" lang="de" xmltv_id="Nat.Geo.HD.de">National Geographic (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="6799" lang="de" xmltv_id="NAT.GEO.WILD.de">National Geographic Wild (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="227" lang="de" xmltv_id="RTL.Living.de">RTL Living</channel>
+  <channel site="web.magentatv.de" site_id="48" lang="de" xmltv_id="Tele.5.de">TELE 5</channel>
+  <channel site="web.magentatv.de" site_id="212" lang="de" xmltv_id="Sky.Sport.2.de">Sky Sport 2</channel>
+  <channel site="web.magentatv.de" site_id="189" lang="de" xmltv_id="Sky.Sport.3.de">Sky Sport 3</channel>
+  <channel site="web.magentatv.de" site_id="219" lang="de" xmltv_id="Sky.Sport.Bundesliga.8.de">Sky Sport Bundesliga 8</channel>
+  <channel site="web.magentatv.de" site_id="18" lang="de" xmltv_id="Eurosport.2.de">Eurosport 2</channel>
+  <channel site="web.magentatv.de" site_id="658" lang="de" xmltv_id="Romance.TV.de">Romance TV (Sky)</channel>
+  <channel site="web.magentatv.de" site_id="232" lang="de" xmltv_id="Sky.Sport.Bundesliga.4.de">Sky Sport Bundesliga 4</channel>
+  <channel site="web.magentatv.de" site_id="237" lang="de" xmltv_id="Sky.Sport.Bundesliga.9.de">Sky Sport Bundesliga 9</channel>
+  <channel site="web.magentatv.de" site_id="482" lang="de" xmltv_id="euronews.(ger).de">Euronews Deutsch</channel>
+  <channel site="web.magentatv.de" site_id="374" lang="de" xmltv_id="ProSieben.de">ProSieben</channel>
+  <channel site="web.magentatv.de" site_id="380" lang="de" xmltv_id="sixx.de">sixx</channel>
+  <channel site="web.magentatv.de" site_id="5557" lang="de" xmltv_id="Sky.Sport.Bundesliga.10.de">Sky Sport Bundesliga 10</channel>
+</channels>

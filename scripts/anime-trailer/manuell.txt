@@ -1,0 +1,3 @@
+# <Shoko-Serien-ID> <trailer|teaser> <YouTube-ID> <Name>
+# Beispiel:
+# 238 trailer w8s65ioWIJQ Sword Art Online

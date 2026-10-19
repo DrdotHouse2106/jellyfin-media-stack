@@ -1,0 +1,1 @@
+# <TVDB-ID> <Shoko-Serien-ID>[,<Shoko-ID>...] – erzwingt die Zuordnung eines Trailarr-Eintrags
