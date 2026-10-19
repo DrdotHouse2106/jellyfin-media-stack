@@ -43,6 +43,24 @@ Prowlarr ──► Sonarr / Radarr / Lidarr ──► SABnzbd ──► /data/do
                  └── m3u-editor ◄── IPTV-Liste + EPG (MagentaTV 14 Tage + epgshare01)
 ```
 
+## 📺 Die passende App: Quallenkino
+
+Für den Fernseher gibt es mit **Quallenkino** einen eigenen Jellyfin-Client, der genau auf dieses
+Setup abgestimmt ist – Startseite wie bei Netflix mit großem Infobereich und Trailer,
+„Weiterschauen“, Empfehlungen mit Begründung („Weil du … geschaut hast“), **Live-TV mit
+Programmführer und Darstellern**, „Heute im TV für dich“, „Top 10 bei euch“, Welten
+(Filmreihen/Studios), Wünschen über Jellyseerr direkt aus der App und ein Bildschirmschoner
+mit Teasern. Ton und Untertitel werden automatisch passend gewählt (Deutsch bevorzugt).
+
+| Gerät | Download |
+|---|---|
+| Fire TV, Android TV, Google TV | [Quallenkino für Android TV](https://github.com/DrdotHouse2106/Jellyfin-TV-Client/releases/latest) |
+| LG-Fernseher (webOS) | [Quallenkino für webOS](https://github.com/DrdotHouse2106/Quallenkino-webOS/releases/latest) |
+
+Die Empfehlungs- und Live-TV-Reihen brauchen das Server-Plugin
+[LocalRecs](https://github.com/DrdotHouse2106/Lokal-Vorschlag-Jellyfin). Mehr dazu und zu
+anderen Apps: [docs/09-clients.md](docs/09-clients.md).
+
 ## Schnellstart
 
 ```bash
