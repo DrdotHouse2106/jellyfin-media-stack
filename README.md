@@ -1,5 +1,7 @@
 # Jellyfin Media Stack
 
+[![Spendier mir einen Kaffee](https://img.shields.io/badge/☕_Spendier_mir_einen_Kaffee-PayPal-0070ba?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/DrdotHouse)
+
 Ein komplettes Heimkino-Setup rund um **Jellyfin** – Filme, Serien, Anime, Live-TV mit 14 Tagen
 Programm, Musik, Hörbücher, Bücher und Manga – als eine `docker-compose.yml` mit Anleitungen.
 
@@ -67,6 +69,14 @@ Danach die Dienste in dieser Reihenfolge einrichten:
 Läuft hier in einem Proxmox-LXC (Debian, Docker) mit Intel-GPU fürs Transcoding.
 Medien auf mehreren Platten; ein gemeinsamer `/data`-Mount hält Downloads und Medien
 auf demselben Dateisystem, damit Hardlinks funktionieren.
+
+## ☕ Unterstützen
+
+In diesem Setup stecken viele Abende: ausprobieren, Fehler suchen, Anleitungen schreiben,
+dazu Server, Testgeräte und KI-Werkzeuge. Wenn es dir Zeit gespart hat, freue ich mich über
+einen Kaffee – freiwillig, ohne Support-Anspruch, einfach eine nette Geste:
+
+[![Spendier mir einen Kaffee](https://img.shields.io/badge/☕_Spendier_mir_einen_Kaffee-PayPal-0070ba?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/DrdotHouse)
 
 ## Lizenz
 
