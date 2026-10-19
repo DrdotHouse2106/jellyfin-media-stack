@@ -96,6 +96,13 @@ einen Kaffee – freiwillig, ohne Support-Anspruch, einfach eine nette Geste:
 
 [![Spendier mir einen Kaffee](https://img.shields.io/badge/☕_Spendier_mir_einen_Kaffee-PayPal-0070ba?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/DrdotHouse)
 
+### 🎮 Auch eine Zocker-Ader?
+
+Dann ist vielleicht mein anderes Projekt genau das Richtige für dich: **[ZockerDB](https://zockerdb.de)** –
+deine Spielesammlung an einem Platz. Spiele, Konsolen und Zubehör erfassen (auch per Barcode-Scan mit
+dem Handy), bewerten und verwalten, mit Preisverlauf, Editionen und PAL/USK-Angaben. Direkt auf
+[zockerdb.de](https://zockerdb.de) nutzen oder als ZockerDB Basis auf dem eigenen Server hosten.
+
 ## Lizenz
 
 Die Anleitungen und Skripte: MIT. Die einzelnen Dienste haben ihre eigenen Lizenzen.
