@@ -73,7 +73,7 @@ docker compose up -d
 Danach die Dienste in dieser Reihenfolge einrichten:
 
 1. [Grundlagen: Ordner, Rechte, Hardlinks](docs/01-grundlagen.md)
-2. [Jellyfin](docs/02-jellyfin.md)
+2. [Jellyfin und Plugins](docs/02-jellyfin.md) – welche Plugins und Einstellungen es für diesen Aufbau braucht
 3. [Download & *arr](docs/03-arr.md)
 4. [Anime mit Shoko](docs/04-anime.md)
 5. [Live-TV mit 14 Tagen EPG](docs/05-live-tv.md)
