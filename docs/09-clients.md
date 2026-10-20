@@ -18,7 +18,7 @@ aus der App, Bildschirmschoner mit Teasern.
 - Android TV / Fire TV: https://github.com/DrdotHouse2106/Jellyfin-TV-Client/releases
 - LG webOS: https://github.com/DrdotHouse2106/Quallenkino-webOS/releases
 
-Einige Reihen brauchen das Server-Plugin „Quallenkinoplugin für Jellyfin“ (früher LocalRecs, siehe [02](02-jellyfin.md)).
+Einige Reihen brauchen das Server-Plugin „Quallenkino“ (Quallenkinoplugin für Jellyfin, früher LocalRecs, siehe [02](02-jellyfin.md)).
 
 ## Fire TV: App installieren
 

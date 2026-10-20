@@ -58,7 +58,7 @@ mit Teasern. Ton und Untertitel werden automatisch passend gewählt (Deutsch bev
 | LG-Fernseher (webOS) | [Quallenkino für webOS](https://github.com/DrdotHouse2106/Quallenkino-webOS/releases/latest) |
 
 Die Empfehlungs- und Live-TV-Reihen brauchen das Server-Plugin
-[Quallenkinoplugin für Jellyfin](https://github.com/DrdotHouse2106/Lokal-Vorschlag-Jellyfin) (früher „Local Recommendations“/LocalRecs). Mehr dazu und zu
+[Quallenkino](https://github.com/DrdotHouse2106/Lokal-Vorschlag-Jellyfin) (Quallenkinoplugin für Jellyfin, früher „Local Recommendations“/LocalRecs). Mehr dazu und zu
 anderen Apps: [docs/09-clients.md](docs/09-clients.md).
 
 ## Schnellstart
