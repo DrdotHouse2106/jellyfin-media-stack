@@ -40,11 +40,17 @@ Einrichten:
 ```bash
 cd /opt/media-stack/epg-grabber
 git clone https://github.com/iptv-org/epg.git epg
-cd epg && git apply --ignore-whitespace ../magenta-actors.patch   # Darsteller mitnehmen
+cd epg && git checkout 6f6cfe2                                    # getesteter Stand
+git apply --ignore-whitespace ../magenta-actors.patch             # Darsteller mitnehmen
 cd .. && docker compose up -d epg-grabber
 ```
 
-- `run.sh` holt alle 12 h das Programm → `magenta.xml` (ca. 10 s für 115 Sender).
+- `run.sh` holt alle 12 h 14 Tage Programm → `magenta.xml`, mit **nur 1 Verbindung**
+  (`--maxConnections=1`): Mit 3 drosselt MagentaTV, damals waren 770 von 1624 Sender-Tagen leer.
+- `merge.mjs` („nur aktualisieren“): Sender-Tage, die im neuen Abruf leer sind, kommen aus dem
+  letzten Stand. Ein Ergebnis unter 80 % der bisherigen Sendungen wird verworfen.
+- Ohne MagentaTV (bleiben bei DE1): Servus TV, DAZN, Sky Sport Austria, Syfy, Silverline,
+  Nickelodeon, Sky Replay.
 - `magenta.channels.xml` ordnet MagentaTV-Sender (`site_id`) den EPG-IDs zu, die der
   m3u-editor für die eigenen Sender nutzt (`xmltv_id`, hier die IDs von epgshare01 DE1).
   Alle verfügbaren Sender: `epg/sites/web.magentatv.de/web.magentatv.de.channels.xml`.
