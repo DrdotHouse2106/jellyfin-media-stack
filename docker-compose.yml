@@ -29,7 +29,7 @@ services:
       - ${MEDIA_DIR}:/data/media
       - ${ANIME_DIR}:/anime
       - ${ANIME_TRAILER_DIR}:/anime-trailer:ro
-      # EPG-Datei direkt für das Plugin LocalRecs (Darsteller im Live-TV), siehe docs/05-live-tv.md
+      # EPG-Datei direkt für das Quallenkinoplugin (Darsteller und Film-Merkmale im Live-TV), siehe docs/05-live-tv.md
       - ./config/m3u-editor/storage/epg:/epg-source:ro
     ports:
       - 8096:8096

@@ -10,7 +10,7 @@
 
 ## Quallenkino
 
-Eigener Jellyfin-Client mit Netflix-artiger Startseite: großer Infobereich mit Trailer,
+Eigener Jellyfin-Client mit Kino-Startseite: großer Infobereich mit Trailer,
 „Weiterschauen“, Empfehlungen mit Begründung, „Heute im TV für dich“, Programmführer mit
 Darstellern, „Top 10 bei euch“, Welten (Filmreihen/Studios), Wünschen über Jellyseerr direkt
 aus der App, Bildschirmschoner mit Teasern.
@@ -18,7 +18,7 @@ aus der App, Bildschirmschoner mit Teasern.
 - Android TV / Fire TV: https://github.com/DrdotHouse2106/Jellyfin-TV-Client/releases
 - LG webOS: https://github.com/DrdotHouse2106/Quallenkino-webOS/releases
 
-Einige Reihen brauchen das Server-Plugin LocalRecs (siehe [02](02-jellyfin.md)).
+Einige Reihen brauchen das Server-Plugin „Quallenkinoplugin für Jellyfin“ (früher LocalRecs, siehe [02](02-jellyfin.md)).
 
 ## Fire TV: App installieren
 

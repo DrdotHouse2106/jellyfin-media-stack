@@ -5,7 +5,7 @@ IPTV-Anbieter (M3U)  ──►  m3u-editor  ──►  Jellyfin (Tuner „M3U“
                              ▲
 MagentaTV ─► epg-grabber ─┐  │
                           ├─► enrich_epg.py ─► epg_DE1_enriched.xml.gz
-epgshare01 (DE1) ─────────┘         └──────────► LocalRecs (Darsteller, direkt gelesen)
+epgshare01 (DE1) ─────────┘         └──────────► Quallenkinoplugin (Darsteller, Film-Merkmale)
 ```
 
 ## m3u-editor (36400)
@@ -68,6 +68,19 @@ vor dem EPG-Sync des m3u-editors:
 
 ## Darsteller in Jellyfin
 
-Weder m3u-editor noch Jellyfin übernehmen Darsteller aus XMLTV. Das Plugin LocalRecs liest
+Weder m3u-editor noch Jellyfin übernehmen Darsteller aus XMLTV. Das Quallenkinoplugin (früher LocalRecs) liest
 sie deshalb direkt aus der Datei – dafür ist sie in den Jellyfin-Container unter
 `/epg-source` eingehängt.
+
+## Film oder Serie: EPG-Anbieter „LocalRecs EPG“ (in Erprobung)
+
+Der XMLTV-Anbieter von Jellyfin macht jede Sendung zum Film, sobald eine ihrer Kategorien in der
+Liste „Filmkategorien“ steht (z. B. „Komödie“). Staffel und Folge gehen dann verloren, Aufnahmen
+landen unter `Filme/`. Das Quallenkinoplugin bringt ab 12.26 einen eigenen Anbieter mit (Reiter
+*Fernsehprogramm*): Serie über die Folgennummer, Film nur mit Mindestlänge und Regie, IMDb oder
+Kategorie „Spielfilm“. Sendungen und Sender-IDs kommen weiter vom m3u-editor, Regie, Jahr und IMDb
+ab 12.27 aus der Datei unter `/epg-source`.
+
+Umstellung: Reiter *Fernsehprogramm* → bisherigen XMLTV-Anbieter zum Übernehmen wählen →
+„LocalRecs EPG einrichten“ → „Regeln testen“. Den alten Anbieter erst unter Dashboard → Live-TV
+löschen, wenn die Einordnung stimmt.

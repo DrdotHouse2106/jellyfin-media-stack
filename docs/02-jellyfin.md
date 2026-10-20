@@ -22,7 +22,7 @@ Weboberfläche: `http://SERVER-IP:8096` – Assistent durchklicken, Bibliotheken
 ## Plugins
 
 So ist der Server hier eingerichtet. Ohne die markierten Plugins (★) fehlen in Jellyfin Web und in
-der Handy-App die Netflix-Startseite, die Empfehlungen und die Zusatzreihen, und Quallenkino zeigt
+der Handy-App die Startseite im Quallenkino-Stil, die Empfehlungen und die Zusatzreihen, und Quallenkino zeigt
 weniger an.
 
 ### 1. Repositories hinzufügen
@@ -44,8 +44,8 @@ Dashboard → Plugins → Repositories → **+**. Danach im Katalog installieren
 | Plugin | Repository | Wofür |
 |---|---|---|
 | ★ **File Transformation** | IAmParadox | Grundlage: erlaubt anderen Plugins, die Weboberfläche zu erweitern. **Zuerst installieren.** |
-| ★ **Local Recommendations** (LocalRecs) | DrdotHouse | Empfehlungen „Weil du … geschaut hast“, „Heute im TV für dich“, „Top 10 bei euch“, Welten, Darsteller im Live-TV – und die **Netflix-Startseite** für Jellyfin Web und die Handy-Apps. Quellcode: [Lokal-Vorschlag-Jellyfin](https://github.com/DrdotHouse2106/Lokal-Vorschlag-Jellyfin) |
-| ★ **Home Screen Sections** | IAmParadox | Zusätzliche Reihen auf der Startseite (Weiterschauen, Kürzlich hinzugefügt, Genres, „Weil du … geschaut hast“). LocalRecs meldet dort seine Reihen an; Quallenkino liest sie auch. |
+| ★ **Quallenkinoplugin für Jellyfin** (früher Local Recommendations / LocalRecs) | DrdotHouse | Empfehlungen „Weil du … geschaut hast“, „Heute im TV für dich“, „Top 10 bei euch“, Welten, Darsteller im Live-TV, Erinnerungen im Kalender, Aufnehmen, „Wer schaut?“ mit Profilbildern, eigener EPG-Anbieter – und die **Startseite im Quallenkino-Stil** für Jellyfin Web und die Handy-Apps. Quellcode: [Lokal-Vorschlag-Jellyfin](https://github.com/DrdotHouse2106/Lokal-Vorschlag-Jellyfin) |
+| ★ **Home Screen Sections** | IAmParadox | Zusätzliche Reihen auf der Startseite (Weiterschauen, Kürzlich hinzugefügt, Genres, „Weil du … geschaut hast“). Das Quallenkinoplugin meldet dort seine Reihen an; Quallenkino liest sie auch. |
 | **Plugin Pages** | IAmParadox | Eigene Seiten von Plugins im Benutzermenü (wird von Home Screen Sections genutzt). |
 | **Jellyfin Enhanced** | Jellyfin Enhanced | Qualitäts- und Bewertungs-Abzeichen auf den Kacheln, Zufallsknopf, Pausenbildschirm, Kalender, Lesezeichen, „Wo sonst streamen“, Jellyseerr-Suche. |
 | **Jellyfin Remote** | DrdotHouse | Handy als Fernbedienung für Quallenkino und andere Jellyfin-Apps. Quellcode: [Jellyfin-Remote](https://github.com/DrdotHouse2106/Jellyfin-Remote) |
@@ -59,16 +59,17 @@ Dashboard → Plugins → Repositories → **+**. Danach im Katalog installieren
 
 ### 3. Einstellungen, auf die es ankommt
 
-**Local Recommendations** (Dashboard → Plugins → Local Recommendations):
-- Abschnitt *Jellyfin Web*: **„Startseite im Netflix-Stil“** und **„Quallenkino-Farben“** einschalten.
+**Quallenkinoplugin für Jellyfin** (Dashboard → Plugins → Quallenkinoplugin für Jellyfin):
+- Reiter *Einstellungen*, Abschnitt *Jellyfin Web*: **„Startseite im Quallenkino-Stil“** und **„Quallenkino-Farben“** einschalten, dazu „Wer schaut?“ und „Profilbilder aus Figuren wählen“.
   Wirkt ohne Neustart; jeder Benutzer kann unten auf der Startseite zur klassischen Ansicht wechseln.
 - Live-TV-Reihe an, Titel z. B. „Heute im TV für dich“; Welten-Liste kommt aus
   [Jellyfin-Welten](https://github.com/DrdotHouse2106/Jellyfin-Welten) (Voreinstellung).
-- Für die Darsteller im Live-TV die XMLTV-Datei aus [05](05-live-tv.md) eintragen.
+- Für die Darsteller im Live-TV die XMLTV-Datei aus [05](05-live-tv.md) eintragen (Reiter *Startseite*, „XMLTV-Quelle für Darsteller“).
+- Reiter *Fernsehprogramm*: eigener EPG-Anbieter „LocalRecs EPG“ statt des XMLTV-Anbieters von Jellyfin (Film/Serie über Regeln statt Filmkategorien, siehe [05](05-live-tv.md)).
 
 **Home Screen Sections** (Dashboard → Plugins → Home Screen Sections):
 - Plugin an, *Lazy Load* aus, *Benutzer dürfen anpassen* an.
-- Eingeschaltete Reihen hier: Weiterschauen + Als Nächstes (zusammen), LocalRecs Live-TV / Serien /
+- Eingeschaltete Reihen hier: Weiterschauen + Als Nächstes (zusammen), Quallenkinoplugin Live-TV / Serien /
   Filme, Kürzlich hinzugefügt Filme und Serien, „Weil du … geschaut hast“, Nochmal ansehen, Genre,
   Regie, Darsteller. Den Rest aus.
 
@@ -77,7 +78,7 @@ Dashboard → Plugins → Repositories → **+**. Danach im Katalog installieren
 - Automatisches Überspringen aus – den Knopf zeigen die Apps selbst (Quallenkino springt nach 5 s).
 
 **Jellyfin Enhanced**: Abzeichen (Qualität, Bewertung), Zufallsknopf, Pausenbildschirm, Kalender,
-Lesezeichen, Jellyseerr an; das eingebaute Theme-Menü aus (die Farben kommen von LocalRecs).
+Lesezeichen, Jellyseerr an; das eingebaute Theme-Menü aus (die Farben kommen vom Quallenkinoplugin).
 
 **JellyBridge**: Jellyseerr-Adresse (z. B. `http://jellyseerr:5055/`) und API-Key aus Jellyseerr eintragen.
 
@@ -90,7 +91,7 @@ Lesezeichen, Jellyseerr an; das eingebaute Theme-Menü aus (die Farben kommen vo
 - **iPhone-App zeigt die neuen Reihen nicht?** Die App hält alte Dateien im Zwischenspeicher.
   Server entfernen hilft nicht – App löschen und neu installieren.
 - Das Feld *Dashboard → Allgemein → Branding → Eigenes CSS* leer lassen, sonst überdeckt es
-  die Farben von LocalRecs.
+  die Farben des Quallenkinoplugins.
 
 ## Sprache
 
