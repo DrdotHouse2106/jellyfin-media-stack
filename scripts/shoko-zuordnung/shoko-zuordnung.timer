@@ -1,0 +1,9 @@
+[Unit]
+Description=Alle 10 Minuten nach unerkannten Shoko-Dateien sehen
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=10min
+
+[Install]
+WantedBy=timers.target

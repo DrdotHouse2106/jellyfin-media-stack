@@ -1,0 +1,8 @@
+[Unit]
+Description=Unerkannte Shoko-Dateien mit Claude zuordnen
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/media-stack/shoko-zuordnung
+ExecStart=/opt/media-stack/shoko-zuordnung/venv/bin/python zuordnen.py
